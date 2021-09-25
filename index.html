@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Chart JS</title>
+</head>
+<body class="bg-success">
+    <div class="m-5">
+        <div class="card col-md-10 offset-md-1 p-3">
+            <h1 class="text-center">Hello, world!</h1>
+
+            <canvas id="pieChart" height="450px"></canvas>
+        </div>
+    </div>
+    
+    <script>
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            data: {
+                labels: ['Male', 'Not disclosed', 'Female'],
+                datasets: [{
+                    type: 'pie',
+                    label: '',
+                    data: ['20.60', '20.60', '58.58'],
+                    backgroundColor: ['#4D42CF', '#6A6DDE', '#A5ABEE'],
+                    borderWidth: 2,
+                    
+                }]
+            },
+            options: {
+                rotation: -59,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+
+                    tooltip : {
+                        titleFont: {
+                            weight: 'bold',
+                        },
+                        footerFont: {
+                            weight: 'bold'
+                        },
+                        displayColors: false,
+                        titleAlign: 'center',
+                        bodyAlign: 'center',
+                        footerAlign: 'center',
+                        boxWidth: '400'
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            display: false,
+                            borderColor: 'transparent',
+                        },
+
+                        ticks: {
+                            display: false,
+                        },
+                    },
+
+                    x: {
+                        grid: {
+                            display: false,
+                            borderColor: 'transparent',
+                        },
+
+                        ticks: {
+                            display: false,
+                        }
+                    }
+                }
+            }
+    });
+    </script>
+
+</body>
+</html>
