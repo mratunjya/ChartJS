@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0%;
+            height: 1vh;
+            width: 1160px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="horizontalBar"></canvas>
+
+    <script>
+    var horizontal_Bar = document.getElementById('horizontalBar').getContext('2d');
+    var horizontal_BarChart = new Chart(horizontal_Bar, {
+    type: 'bar',
+    data: {
+        labels: ['Health Behaviours', 'Clarity of Role at Work', 'Coping Behaviours', 'Sense of Control at Work', 'Quality of Relationships', 'Work-Life Balance', 'Emotional State', 'Job Contentment'],
+        datasets: [{
+            label: '# of Votes',
+            data: [0.50, 0.70, 0.55, 0.54, 0.60, 0.74, 0.69, 0.64],
+            backgroundColor: [
+                'rgba(224, 87, 87, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(119, 185, 99, 1)',
+            ],
+            borderColor: [
+                'rgba(224, 87, 87, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(224, 87, 87, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(119, 185, 99, 1)',
+                'rgba(119, 185, 99, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 10,
+            maxBarThickness: 20,
+        }]
+    },
+        options: {
+            indexAxis: 'y',
+            plugins: {
+                legend: {
+                    display: false
+                },
+
+                tooltip : {
+                    enabled: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    grid: {
+                        suggestedMax: 0.62,
+                        display: false,
+                        borderColor: 'transparent',
+                    },
+
+                    ticks: {
+                        color: 'rgba(29, 44, 99, 1)',
+                        font: {
+                            size: '16px',
+                            weight: 'bold',
+                            family: "'Lato', sans-serif",
+                        },
+                    },
+                },
+
+                x: {
+                    grid: {
+                        display: false,
+                        borderColor: 'rgba(170, 170, 170, 1)',
+                    },
+
+                    ticks: {
+                        color: 'rgba(170, 170, 170, 1)',
+                        font: {
+                            size: '12px',
+                            weight: 'bold',
+                            family: "'Lato', sans-serif",
+                        },
+                    },
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
