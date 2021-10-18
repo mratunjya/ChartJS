@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0%;
+            height: 1vh;
+            width: 1160px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="multiSeriesPie"></canvas>
+
+    <script>
+    var ctx_pie = document.getElementById('multiSeriesPie').getContext('2d');
+    var pie_chart = new Chart(ctx_pie, {
+        data: {
+            labels: ['Male', 'Not disclosed', 'Female'],
+            datasets: [{
+                type: 'doughnut',
+                label: '',
+                data: ['62', '38'],
+                backgroundColor: ['#7FA2EA', '#F0F1F7'],
+                borderWidth: 0,
+                hoverBackgroundColor: ['#7FA2EA', '#F0F1F7'],
+                borderRadius: ['16', '0'],
+            }]
+        },
+        options: {
+            rotation: 0,
+            plugins: {
+                legend: {
+                    display: false
+                },
+
+                tooltip : {
+                    enabled: false
+                }
+            },
+            scales: {
+                y: {
+                    grid: {
+                        display: false,
+                        borderColor: 'transparent',
+                    },
+
+                    ticks: {
+                        display: false,
+                    },
+                },
+
+                x: {
+                    grid: {
+                        display: false,
+                        borderColor: 'transparent',
+                    },
+
+                    ticks: {
+                        display: false,
+                    }
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
